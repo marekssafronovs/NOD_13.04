@@ -49,7 +49,7 @@ public class NoteManager{
         fro(String category : map.key()){
             System.out.println("\nKategorija:" + category);
             for(Note n : map.get(category)){
-                n.print();
+                n.print(
             }
         }
     }
