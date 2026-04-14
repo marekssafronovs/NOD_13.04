@@ -1,5 +1,5 @@
 package service;
-import model.Note;
+import Model.Note;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -11,7 +11,7 @@ public class NoteManager{
     }
 
     public void printAllNotes(){
-        if (notes.isEmty()) {
+        if (notes.isEmpty()) {
             System.out.println("Nav nevienas piezimes");
             return;
         }
@@ -27,7 +27,7 @@ public class NoteManager{
         for (Note n: notes){
             if(n.getTitle().toLowerCase().contains(keyword.toLowerCase())||
 
-            n.getContent().toLowerCase().contain(keyword.toLowerCase())){
+            n.getContent().toLowerCase().contains(keyword.toLowerCase())){
 
                  n.print();
                  found = true;
@@ -46,10 +46,10 @@ public class NoteManager{
             map.putIfAbsent(n.getCategory(), new ArrayList<>());
             map.get(n.getCategory()).add(n);
         }
-        fro(String category : map.key()){
+        for(String category : map.keySet()){
             System.out.println("\nKategorija:" + category);
             for(Note n : map.get(category)){
-                n.print(
+                n.print();
             }
         }
     }
